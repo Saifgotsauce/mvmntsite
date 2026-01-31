@@ -13,12 +13,8 @@ import StickyCTA from './sections/StickyCTA';
 
 function App() {
   const [scrollY, setScrollY] = useState(0);
-  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    // Trigger initial load animation
-    setIsLoaded(true);
-
     const handleScroll = () => {
       setScrollY(window.scrollY);
     };
@@ -28,9 +24,7 @@ function App() {
   }, []);
 
   return (
-    <div 
-      className={`min-h-screen bg-white transition-opacity duration-500 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
-    >
+    <div className="min-h-screen bg-white">
       <Navbar scrollY={scrollY} />
       
       <main>
