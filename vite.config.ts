@@ -6,12 +6,7 @@ import { defineConfig } from "vite"
 export default defineConfig({
   base: './',
   plugins: [
-    react({
-      // Enable Fast Refresh
-      fastRefresh: true,
-      // Optimize React runtime
-      jsxRuntime: 'automatic',
-    }),
+    react(),
   ],
   resolve: {
     alias: {
@@ -45,14 +40,17 @@ export default defineConfig({
         chunkFileNames: 'assets/js/[name]-[hash].js',
         entryFileNames: 'assets/js/[name]-[hash].js',
         assetFileNames: (assetInfo) => {
+          if (!assetInfo.name) {
+            return 'assets/[name]-[hash][extname]';
+          }
           const info = assetInfo.name.split('.');
-          const ext = info[info.length - 1];
-          if (/\.(png|jpe?g|svg|gif|webp|ico)$/.test(assetInfo.name ?? '')) {
+          const extname = info[info.length - 1];
+          if (/\.(png|jpe?g|svg|gif|webp|ico)$/.test(assetInfo.name)) {
             return `assets/images/[name]-[hash][extname]`;
-          } else if (/\.(woff2?|eot|ttf|otf)$/.test(assetInfo.name ?? '')) {
+          } else if (/\.(woff2?|eot|ttf|otf)$/.test(assetInfo.name)) {
             return `assets/fonts/[name]-[hash][extname]`;
           }
-          return `assets/[ext]/[name]-[hash][extname]`;
+          return `assets/${extname}/[name]-[hash][extname]`;
         },
       },
     },
@@ -86,9 +84,6 @@ export default defineConfig({
       'X-XSS-Protection': '1; mode=block',
       'Referrer-Policy': 'strict-origin-when-cross-origin',
       'Permissions-Policy': 'camera=(), microphone=(), geolocation=()',
-      // Content Security Policy
-      'Content-Security-Policy': "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com https://*.elevenlabs.io https://elevenlabs.io; worker-src 'self' blob: https://*.elevenlabs.io; child-src 'self' blob: https://*.elevenlabs.io; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://formspree.io https://*.elevenlabs.io https://elevenlabs.io wss://*.elevenlabs.io; media-src 'self' https://*.elevenlabs.io https://elevenlabs.io blob: data:; frame-src 'none'; object-src 'none';",
-      // HSTS
       'Strict-Transport-Security': 'max-age=31536000; includeSubDomains',
     },
   },
