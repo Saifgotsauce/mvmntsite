@@ -101,6 +101,7 @@ export default function PricingSection() {
         </div>
 
         {/* Pricing Cards */}
+        <div className="overflow-hidden">
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto items-stretch">
           {/* Setup Card */}
           <div
@@ -190,6 +191,7 @@ export default function PricingSection() {
               </div>
             </div>
           </div>
+        </div>
         </div>
 
         {/* CTA */}
