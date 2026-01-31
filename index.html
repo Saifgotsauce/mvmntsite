@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    
+    <!-- Primary Meta Tags -->
+    <title>MVMNT - AI HVAC Receptionist | Never Miss Another Call</title>
+    <meta name="title" content="MVMNT - AI HVAC Receptionist | Never Miss Another Call" />
+    <meta name="description" content="AI-powered receptionist for HVAC companies. Answers calls 24/7, books appointments, and captures every lead. Start your free 7-day trial today." />
+    <meta name="keywords" content="HVAC, AI receptionist, call answering, appointment booking, HVAC software, AI assistant" />
+    <meta name="author" content="MVMNT" />
+    <meta name="robots" content="index, follow" />
+    
+    <!-- Mobile Optimization -->
+    <meta name="theme-color" content="#000000" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="format-detection" content="telephone=no" />
+    
+    <!-- Security Headers (also set in server config) -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com https://*.elevenlabs.io https://elevenlabs.io; worker-src 'self' blob: https://*.elevenlabs.io; child-src 'self' blob: https://*.elevenlabs.io; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob: https:; connect-src 'self' https://formspree.io https://*.elevenlabs.io https://elevenlabs.io wss://*.elevenlabs.io; media-src 'self' https://*.elevenlabs.io https://elevenlabs.io blob: data:; frame-src 'self';" />
+    
+    <!-- Preconnect to external domains for faster loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://formspree.io" />
+    <link rel="preconnect" href="https://unpkg.com" />
+    
+    <!-- Preload critical assets -->
+    <link rel="preload" href="/hero-hvac.jpg" as="image" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>M</text></svg>" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="MVMNT - AI HVAC Receptionist" />
+    <meta property="og:description" content="AI-powered receptionist for HVAC companies. Never miss another call." />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content="MVMNT - AI HVAC Receptionist" />
+    <meta property="twitter:description" content="AI-powered receptionist for HVAC companies. Never miss another call." />
+    
+    <!-- Critical CSS inline for faster rendering -->
+    <style>
+      /* Critical CSS for above-the-fold content */
+      html { scroll-behavior: smooth; }
+      body { 
+        margin: 0; 
+        font-family: 'Inter Tight', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+      }
+      #root { min-height: 100vh; }
+      /* Prevent FOUC */
+      .loading { opacity: 0; }
+      .loaded { opacity: 1; transition: opacity 0.3s ease; }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
