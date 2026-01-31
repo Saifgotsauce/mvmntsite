@@ -43,8 +43,23 @@ export default function VoiceModal({ children }: VoiceModalProps) {
       // Script already exists, just initialize
       setTimeout(initializeWidget, 100);
     } else {
-      // Load the script
-      const script = document.createElement('script');
+  // Override worklet loader before widget loads
+  const originalAddModule = AudioWorklet.prototype.addModule;
+
+  AudioWorklet.prototype.addModule = function (url: string, options?: any) {
+    if (url && url.includes("rawAudioProcessor")) {
+      return originalAddModule.call(
+        this,
+        "/worklets/rawAudioProcessor.worklet.js",
+        options
+      );
+    }
+    return originalAddModule.call(this, url, options);
+  };
+
+  // Load the script
+  const script = document.createElement('script');
+
       script.id = 'elevenlabs-convai-script';
       script.src = 'https://unpkg.com/@elevenlabs/convai-widget-embed';
       script.async = true;
