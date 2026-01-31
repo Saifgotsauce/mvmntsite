@@ -80,7 +80,7 @@ export default defineConfig({
       'Referrer-Policy': 'strict-origin-when-cross-origin',
       'Permissions-Policy': 'camera=(), microphone=*, geolocation=()',
       // Content Security Policy
-      'Content-Security-Policy': "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' blob: https://unpkg.com https://*.elevenlabs.io https://elevenlabs.io; worker-src 'self' blob: https://*.elevenlabs.io; child-src 'self' blob: https://*.elevenlabs.io; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://formspree.io https://*.elevenlabs.io https://elevenlabs.io wss://*.elevenlabs.io; media-src 'self' https://*.elevenlabs.io https://elevenlabs.io blob: data:; frame-src 'none'; object-src 'none';",
+      'Content-Security-Policy': "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' blob: https://unpkg.com https://*.elevenlabs.io https://elevenlabs.io; worker-src 'self' blob: https://*.elevenlabs.io; worklet-src 'self' blob:; child-src 'self' blob: https://*.elevenlabs.io; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://formspree.io https://*.elevenlabs.io https://elevenlabs.io wss://*.elevenlabs.io; media-src 'self' https://*.elevenlabs.io https://elevenlabs.io blob: data:; frame-src 'none'; object-src 'none';",
       // HSTS
       'Strict-Transport-Security': 'max-age=31536000; includeSubDomains',
     },
