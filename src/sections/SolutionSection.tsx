@@ -72,7 +72,7 @@ export default function SolutionSection() {
 
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-16">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-16 overflow-hidden">
           <div>
             <div
               className={`inline-flex items-center gap-2 bg-brand-red/10 border border-brand-red/20 rounded-full px-4 py-2 mb-6 transition-all duration-700 ${
